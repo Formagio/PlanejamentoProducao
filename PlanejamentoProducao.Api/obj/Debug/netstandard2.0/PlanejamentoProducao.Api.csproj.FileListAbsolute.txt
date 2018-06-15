@@ -1,0 +1,9 @@
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\bin\Debug\netstandard2.0\PlanejamentoProducao.Api.deps.json
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\bin\Debug\netstandard2.0\PlanejamentoProducao.Api.dll
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\bin\Debug\netstandard2.0\PlanejamentoProducao.Api.pdb
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\obj\Debug\netstandard2.0\PlanejamentoProducao.Api.csprojAssemblyReference.cache
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\obj\Debug\netstandard2.0\PlanejamentoProducao.Api.csproj.CoreCompileInputs.cache
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\obj\Debug\netstandard2.0\PlanejamentoProducao.Api.AssemblyInfoInputs.cache
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\obj\Debug\netstandard2.0\PlanejamentoProducao.Api.AssemblyInfo.cs
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\obj\Debug\netstandard2.0\PlanejamentoProducao.Api.dll
+C:\Users\roger_lopes\GitProjects\PlanejamentoProducao\PlanejamentoProducao.Api\obj\Debug\netstandard2.0\PlanejamentoProducao.Api.pdb
