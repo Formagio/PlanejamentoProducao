@@ -38,15 +38,38 @@ namespace PlanejamentoProducao.Api.ProcessadorFila
         private float CalcularCusto(IEnumerable<Processo> processos)
         {
             var custo = 0f;
+            var tempoTranscorrido = 0;
 
-            for (var indiceExecucao = 0; indiceExecucao < processos.Count(); indiceExecucao++)
+            for (var indiceProcesso = 0; indiceProcesso < processos.Count(); indiceProcesso++)
+            {
+                var somaCustoPorHora = processos
+                    .Skip(indiceProcesso)
+                    .Sum(p => p.CustoPorHora);
+
+                for (int minuto = 0; minuto < processos.ElementAt(indiceProcesso).TempoExecucao; minuto++)
+                {
+                    tempoTranscorrido++;
+
+                    // O custo da tarefa deve ser cobrado a cada hora transcorrida (60 minutos)
+                    if (tempoTranscorrido == 60)
+                    {
+                        custo += processos.ElementAt(indiceProcesso).TempoExecucao * somaCustoPorHora;
+                        tempoTranscorrido = 0;
+                    }
+                }
+            }
+
+            /* 
+             * Esta é outra forma que encontrei para calcular o custo.
+             * A cada minuto transcorrido ela soma o custo de todas as tarefas pendentes.
+            for (var indiceProcesso = 0; indiceProcesso < processos.Count(); indiceProcesso++)
             {
                 var custoPorMinuto = processos
-                    .Skip(indiceExecucao)
+                    .Skip(indiceProcesso)
                     .Sum(p => p.CustoPorHora / 60f);
 
-                custo += processos.ElementAt(indiceExecucao).TempoExecucao * custoPorMinuto;
-            }
+                custo += processos.ElementAt(indiceProcesso).TempoExecucao * custoPorMinuto;
+            }*/
 
             return custo;
         }

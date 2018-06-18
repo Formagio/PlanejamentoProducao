@@ -7,3 +7,13 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.col-sm-4 {
+    border: 1px dotted lightgrey;
+    min-height: 500px;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}

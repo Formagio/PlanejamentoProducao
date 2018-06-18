@@ -8,26 +8,25 @@ namespace PlanejamentoProducao.Api
 {
     public interface IGerenciadorFila
     {
-        void AdicionarProcesso(Processo processo);
+        void IncluirProcesso(Processo processo);
         IEnumerable<Processo> ProcessarFila(IProcessadorFila processadorFila);
     }
 
     public class GerenciadorFila : IGerenciadorFila
     {
         private List<Processo> _processos;
-        public IEnumerable<Processo> FilaDeProcessos => _processos;
         
         public GerenciadorFila()
         {
             _processos = new List<Processo>();
         }
 
-        public void AdicionarProcesso(Processo processo)
+        public void IncluirProcesso(Processo processo)
         {            
             if (_processos.Any(p => 
                     p.Identificador.Equals(processo.Identificador, StringComparison.InvariantCultureIgnoreCase)))
             {
-                throw new ArgumentException($"Identificador {processo.Identificador} já existente!");
+                throw new ArgumentException($"Identificador '{processo.Identificador}' já existe!");
             }
 
             _processos.Add(processo);

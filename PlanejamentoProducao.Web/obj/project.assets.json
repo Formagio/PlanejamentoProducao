@@ -12433,23 +12433,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\roger\\.nuget\\packages\\": {},
+    "C:\\Users\\roger_lopes\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\roger\\Documents\\GitHub\\PlanejamentoProducao\\PlanejamentoProducao.Web\\PlanejamentoProducao.Web.csproj",
+      "projectUniqueName": "C:\\Users\\roger_lopes\\GitProjects\\PlanejamentoProducao\\PlanejamentoProducao.Web\\PlanejamentoProducao.Web.csproj",
       "projectName": "PlanejamentoProducao.Web",
-      "projectPath": "C:\\Users\\roger\\Documents\\GitHub\\PlanejamentoProducao\\PlanejamentoProducao.Web\\PlanejamentoProducao.Web.csproj",
-      "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\roger\\Documents\\GitHub\\PlanejamentoProducao\\PlanejamentoProducao.Web\\obj\\",
+      "projectPath": "C:\\Users\\roger_lopes\\GitProjects\\PlanejamentoProducao\\PlanejamentoProducao.Web\\PlanejamentoProducao.Web.csproj",
+      "packagesPath": "C:\\Users\\roger_lopes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\roger_lopes\\GitProjects\\PlanejamentoProducao\\PlanejamentoProducao.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\roger\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\roger_lopes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12457,13 +12457,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://dcsteamcity.dell.com/guestAuth/app/nuget/v1/FeedService.svc": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\roger\\Documents\\GitHub\\PlanejamentoProducao\\PlanejamentoProducao.Api\\PlanejamentoProducao.Api.csproj": {
-              "projectPath": "C:\\Users\\roger\\Documents\\GitHub\\PlanejamentoProducao\\PlanejamentoProducao.Api\\PlanejamentoProducao.Api.csproj"
+            "C:\\Users\\roger_lopes\\GitProjects\\PlanejamentoProducao\\PlanejamentoProducao.Api\\PlanejamentoProducao.Api.csproj": {
+              "projectPath": "C:\\Users\\roger_lopes\\GitProjects\\PlanejamentoProducao\\PlanejamentoProducao.Api\\PlanejamentoProducao.Api.csproj"
             }
           }
         }

@@ -2,8 +2,8 @@
 using PlanejamentoProducao.Api;
 using PlanejamentoProducao.Api.Models;
 using PlanejamentoProducao.Api.ProcessadorFila;
+using PlanejamentoProducao.Web.Areas.Api.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace PlanejamentoProducao.Web.Areas.Api.Controllers
@@ -21,47 +21,32 @@ namespace PlanejamentoProducao.Web.Areas.Api.Controllers
 
         // GET: api/GerenciadorProducao
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            try
+            var filaMenorTempo = _gerenciadorFila.ProcessarFila(new ProcessadorMenorTempo());
+            var filaMenorCusto = _gerenciadorFila.ProcessarFila(new ProcessadorMenorCusto());
+
+            return Ok(new GerenciadorFilaViewModel()
             {
-                _gerenciadorFila.AdicionarProcesso(new Processo()
-                {
-                    Identificador = "Refile Manual",
-                    TempoExecucao = 60,
-                    CustoPorHora = 30
-                });
-
-                _gerenciadorFila.AdicionarProcesso(new Processo()
-                {
-                    Identificador = "Impressão",
-                    TempoExecucao = 30,
-                    CustoPorHora = 40
-                });
-
-                _gerenciadorFila.AdicionarProcesso(new Processo()
-                {
-                    Identificador = "Acabamento",
-                    TempoExecucao = 40,
-                    CustoPorHora = 20
-                });
-                
-                var filaMenorTempo = _gerenciadorFila.ProcessarFila(new ProcessadorMenorTempo());
-                var filaMenorCusto = _gerenciadorFila.ProcessarFila(new ProcessadorMenorCusto());
-
-                return filaMenorTempo.Select(f => f.Identificador);
-            }
-            catch (ArgumentException)
-            {
-            }
-
-            return new string[] { "value1", "value2" };
+                FilaMenorTempoEspera = filaMenorTempo.Select(f => f.Identificador),
+                FilaMenorCustoEspera = filaMenorCusto.Select(f => f.Identificador)
+            });
         }
 
         // POST: api/GerenciadorProducao
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post(Processo value)
         {
+            try
+            {
+                _gerenciadorFila.IncluirProcesso(value);
+
+                return Ok();
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

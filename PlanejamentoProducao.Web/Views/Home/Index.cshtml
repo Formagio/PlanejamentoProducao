@@ -3,22 +3,38 @@
 }
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Menor tempo</h2>
-        <table id="tbl-menor-tempo">
-            <tbody>
-            </tbody>
-        </table>
+    <div class="col-sm-4">
+        <h2>Incluir tarefa</h2>
+        <form id="frm-inclusao-processo" class="form-horizontal">
+            <div class="form-group">
+                <label for="identificador">Identificador</label>
+                <input type="text" id="txt-identificador" name="txt-identificador"
+                       maxlength="50" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="tempoExecucao">Tempo de execu&ccedil;&atilde;o em minutos</label>
+                <input type="number" id="txt-tempo-execucao" name="txt-tempo-execucao" value="0"
+                       maxlength="3" min="0" max="999" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="custoPorHora">Custo por hora</label>
+                <input type="number" id="txt-custo-por-hora" name="txt-custo-por-hora" value="0"
+                       maxlength="3" min="0" max="999" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-default" value="Incluir" onclick="incluirProcesso();" />
+            </div>
+        </form>
     </div>
-    <div class="col-md-4">
-        <h2>Menor custo</h2>
-        <table id="tbl-menor-custo">
+    <div class="col-sm-4">
+        <h2>Tabela menor tempo</h2>
+        <table id="tbl-menor-tempo">
             <tbody></tbody>
         </table>
     </div>
-    <div class="col-md-4">
-        <h2>Incluir tarefa</h2>
-        <table>
+    <div class="col-sm-4">
+        <h2>Tabela menor custo</h2>
+        <table id="tbl-menor-custo">            
             <tbody></tbody>
         </table>
     </div>
