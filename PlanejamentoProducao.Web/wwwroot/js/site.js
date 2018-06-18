@@ -1,4 +1,26 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(() => {
+    $.ajax({
+        type: "GET",
+        url: "/api/GerenciadorFila/",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
 
-// Write your JavaScript code.
+            $("#tbl-menor-tempo tbody").html("");
+
+            $.each(data, function (i, item) {
+                var rows = "<tr>" +
+                    "<td>" + item + "</td>" +
+                    "</tr>";
+                $("#tbl-menor-tempo tbody").append(rows);
+            });
+        },
+        failure: function (data) {
+            console.log(data.responseText);
+        },
+        error: function (data) {
+            console.log(data.responseText);
+        }
+    });
+});
